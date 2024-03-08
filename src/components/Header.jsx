@@ -3,6 +3,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
 
 import MenuItem from './MenuItem';
+import DarkMode from './DarkModeSwitch';
 
 export default function Header() {
   return (
@@ -11,12 +12,17 @@ export default function Header() {
         <MenuItem title='home' address='/' Icon={AiFillHome} />
         <MenuItem title='about' address='/about' Icon={BsFillInfoCircleFill} />
       </div>
-      <Link href={'/'} className='flex gap-1 items-center'>
-        <span className='text-2xl font-bold bg-amber-500 py-1 px-2 rounded-lg'>
-          IMDb
-        </span>
-        <span className='text-xl hidden sm:inline'>Next</span>
-      </Link>
+      <div className='flex gap-4 items-center'>
+        <DarkMode />
+        <Link href={'/'} className='flex gap-1 items-center'>
+          <span className='text-2xl font-bold bg-amber-500 py-1 px-2 rounded-lg'>
+            IMDb
+          </span>
+          <span className='text-xl hidden sm:inline hover:text-amber-500 transition-colors duration-300 ease-linear'>
+            Next
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
